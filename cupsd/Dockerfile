@@ -1,7 +1,9 @@
-ARG BASE_USER
-ARG MAINTAINER
-FROM ${BASE_USER}/debian:testing
-MAINTAINER $MAINTAINER
+
+# build on an ARM machine (cubox-i)
+# docker build -t docker-cupsd .
+
+FROM debian:bullseye
+MAINTAINER hardcoredaniel@seznam.cz
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
 RUN apt-get update \
@@ -45,3 +47,7 @@ RUN sed -e '0,/^</s//DefaultEncryption IfRequested\n&/' -i /etc/cups/cupsd.conf
 
 # Default shell
 CMD ["/usr/sbin/cupsd", "-f"]
+
+# docker tag docker-cupsd:latest hcdaniel/docker-cupsd:1.0
+# docker login
+# docker push hcdaniel/docker-cupsd:1.0
