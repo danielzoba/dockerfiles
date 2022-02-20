@@ -56,6 +56,6 @@ COPY etc/cups/ppd/EPSON_Stylus_CX3600.ppd.O /etc/cups/ppd/
 # Default shell
 CMD ["/usr/sbin/cupsd", "-f"]
 
-# docker tag docker-cupsd:latest hcdaniel/docker-cupsd:1.0
+# docker tag docker-cupsd:latest hcdaniel/docker-cupsd:1.1
 # docker login
-# docker push hcdaniel/docker-cupsd:1.0
+# docker push hcdaniel/docker-cupsd:1.1
