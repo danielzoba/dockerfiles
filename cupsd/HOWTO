@@ -1,0 +1,11 @@
+Make CUPS config persistent:
+
+a) (probably) make /etc/cups persistent
+
+b) include files into container:
+
+- use "docker diff" with the running container to check which files were added
+- include necessary files from /etc/cups/ into the image
+
+
+
